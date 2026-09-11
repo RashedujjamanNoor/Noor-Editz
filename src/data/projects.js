@@ -7,7 +7,7 @@ export const projects = [
     type: "Reel",
     accent: "from-violet-500/50 via-fuchsia-500/20 to-black",
     label: "HOOK / STORY / RETENTION",
-    video: "/com.mp4",
+    video: "/c.mp4",
   },
   {
     id: "commercial-02",
@@ -17,7 +17,7 @@ export const projects = [
     type: "Reel",
     accent: "from-cyan-400/40 via-blue-500/20 to-black",
     label: "PACE / B-ROLL / SOUND",
-    video: "/com2.mp4",
+    video: "/c2.mp4",
   },
   {
     id: "commercial-03",
@@ -27,7 +27,7 @@ export const projects = [
     type: "Reel",
     accent: "from-cyan-400/40 via-blue-500/20 to-black",
     label: "PACE / B-ROLL / SOUND",
-    video: "/com3.mp4",
+    video: "/c3.mp4",
   },
   {
     id: "commercial-04",
@@ -37,7 +37,7 @@ export const projects = [
     type: "Reel",
     accent: "from-cyan-400/40 via-blue-500/20 to-black",
     label: "PACE / B-ROLL / SOUND",
-    video: "/com4.mp4",
+    video: "/c4.mp4",
   },
   {
     id: "short-form-01",
