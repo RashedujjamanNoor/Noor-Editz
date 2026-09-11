@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color-scheme: dark;
+}
+html {
+  scroll-behavior: smooth;
+  background: #080808;
+}
+body {
+  margin: 0;
+  background: #080808;
+  color: #f5f5f5;
+}
+::selection {
+  background: #fff;
+  color: #000;
+}
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+}
+
+/* ========================================
+   FLOATING CONTACT BUTTONS
+======================================== */
+
+@keyframes whatsappGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0px rgba(37, 211, 102, 0),
+      0 0 12px rgba(37, 211, 102, 0.35),
+      0 0 25px rgba(37, 211, 102, 0.15);
+  }
+
+  50% {
+    box-shadow:
+      0 0 8px rgba(37, 211, 102, 0.7),
+      0 0 25px rgba(37, 211, 102, 0.55),
+      0 0 45px rgba(37, 211, 102, 0.3);
+  }
+}
+
+@keyframes callGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0px rgba(255, 255, 255, 0),
+      0 0 12px rgba(255, 255, 255, 0.3),
+      0 0 25px rgba(255, 255, 255, 0.1);
+  }
+
+  50% {
+    box-shadow:
+      0 0 8px rgba(255, 255, 255, 0.7),
+      0 0 25px rgba(255, 255, 255, 0.5),
+      0 0 45px rgba(255, 255, 255, 0.25);
+  }
+}
+
+@keyframes contactRing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.whatsapp-glow {
+  animation: whatsappGlow 2.2s ease-in-out infinite;
+}
+
+.call-glow {
+  animation: callGlow 2.2s ease-in-out infinite;
+}
+
+.contact-ring {
+  animation: contactRing 2.2s ease-out infinite;
+  pointer-events: none;
+}
