@@ -335,25 +335,66 @@ function App() {
               exit={{ opacity: 0, scale: 0.96, y: 20 }}
               className="w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-[#101010]"
             >
-              <div className="relative aspect-[9/16] overflow-hidden bg-black">
+              <div className="relative aspect-[9/16] w-full overflow-hidden bg-black">
+                {/* Close Button */}
                 <button
                   onClick={() => setSelected(null)}
-                  className="absolute right-4 top-4 z-20 h-9 w-9 rounded-full border border-white/15 bg-black/50 text-white backdrop-blur-md transition hover:bg-white hover:text-black"
+                  aria-label="Close video"
+                  className="
+      absolute
+      right-3
+      top-3
+      z-50
+      flex
+      h-11
+      w-11
+      items-center
+      justify-center
+      rounded-full
+      bg-black/70
+      text-2xl
+      text-white
+      backdrop-blur-md
+      border
+      border-white/20
+      shadow-lg
+      transition
+      hover:bg-white
+      hover:text-black
+      active:scale-90
+    "
                 >
                   ×
                 </button>
 
+                {/* Video */}
                 {selected.video ? (
                   <video
                     src={selected.video}
                     controls
                     autoPlay
+                    muted
                     playsInline
-                    className="absolute inset-0 h-full w-full object-cover"
+                    preload="metadata"
+                    className="
+    absolute
+    inset-0
+    h-full
+    w-full
+    object-contain
+    bg-black
+  "
+                    onClick={(e) => {
+                      const video = e.currentTarget;
+
+                      if (video.paused) {
+                        video.play().catch(() => {});
+                      }
+                    }}
                   />
                 ) : (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-white/10 to-white/[0.02]">
-                    <span className="rounded-full bg-white px-5 py-3 text-xs font-semibold text-black">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-sm text-white/50">
                       VIDEO NOT AVAILABLE
                     </span>
                   </div>
